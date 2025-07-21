@@ -9,12 +9,12 @@ socials:
   soundcloud:
     title: TimeFracture
     href: "https://soundcloud.com/timefracture"
-    fa-icon: fa-brands fa-soundcloud
+    fa-icon: fa-brands fa-soundcloud fa-2xl
 
   instagram:
     title: TimeFracture
     href: "https://www.instagram.com/timefracture.techno"
-    fa-icon: fa-brands fa-instagram
+    fa-icon: fa-brands fa-instagram fa-2xl
 
 releases:
   - name: Give me acid techno
