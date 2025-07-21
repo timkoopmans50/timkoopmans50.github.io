@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ "/assets/images/logo.jpg" | absolute_url }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+
+
+    <title>{{ page.title }}</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="{{ page.title }}" />
+    <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/brands.min.css" />
+  </head>
+  
+  <body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#releases">Releases</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="section about" id="about">
+        <div class="content">
+	    <h1>{{ site.title }}</h1>
+	    <p>{{ site.description }}</p>
+        </div>
+
+	<div class="social">
+		<a href="{{ site.socials.soundcloud.href }}" target="_blank" class="{{ site.socials.soundcloud.fa-icon }}"></a>
+		<a href="{{ site.socials.instagram.href }}" target="_blank" class="{{ site.socials.instagram.fa-icon }}"></a>
+	</div>
+    </section>
+
+    <section class="section releases" id="releases">
+        <div class="content">
+            <h2>Releases</h2>
+            <div class="music-grid">
+		{% for release in site.releases %}
+		    <a class="music-item" href="{{ release.url }}" target="_blank">
+			<img src="{{ release.image }}" alt="{{ release.name }}">
+
+		        <div class="overlay">
+		            Listen
+		        </div>
+		    </a>
+		{% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="content">
+            <h2>Contact</h2>
+            <p>For inquiries, bookings, or collaborations:</p>
+	    <p><a href="mailto:{{ site.email }}">Email TimeFracture</a></p>
+        </div>
+    </section>
+
+    <footer>
+	<p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
